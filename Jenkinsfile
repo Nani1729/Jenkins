@@ -17,9 +17,9 @@ pipeline {
                 echo 'Sonar'
             }
         }
-        stage('Nexus') {
+        stage('Tomcat') {
             steps {
-                echo 'Nexus'
+                echo 'tomcat'
             }
         }
     }
