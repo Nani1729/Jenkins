@@ -2,25 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('fetch the code from github') {
+        stage('Java') {
             steps {
-                echo 'fetch the code from github'
+                script {
+                    tool name: 'JAVA11', type: 'jdk'
+                    sh 'java -version'
+                }
             }
         }
-        stage('mavenBuild') {
+        stage('maven') {
             steps {
-                echo 'mavenBuild'
-            }
-        }
-        stage('Sonar') {
-            steps {
-                echo 'Sonar'
-            }
-        }
-        stage('Tomcat') {
-            steps {
-                echo 'tomcat'
+                script {
+                    tool name: 'maven', type: 'maven'
+                    sh 'mvn -v'
+                }
             }
         }
     }
 }
+
