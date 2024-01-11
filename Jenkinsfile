@@ -18,6 +18,38 @@ pipeline {
                 }
             }
         }
+        stage('mvn clean') {
+            steps {
+                script {
+                    tool name: 'maven', type: 'maven'
+                    sh 'mvn clean'
+                }
+            }
+        }
+        stage('mvn compile') {
+            steps {
+                script {
+                    tool name: 'maven', type: 'maven'
+                    sh 'mvn compile'
+                }
+            }
+        }
+        stage('mvn test') {
+            steps {
+                script {
+                    tool name: 'maven', type: 'maven'
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('mvn package') {
+            steps {
+                script {
+                    tool name: 'maven', type: 'maven'
+                    sh 'mvn package'
+                }
+            }
+        }
     }
 }
 
