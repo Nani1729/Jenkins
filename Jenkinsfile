@@ -10,7 +10,7 @@ pipeline {
                 }
             }
         }
-        stage('maven) {
+        stage('maven') {
             steps {
                 script {
                     tool name: 'maven', type: 'maven'
