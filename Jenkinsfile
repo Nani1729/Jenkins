@@ -52,7 +52,7 @@ pipeline {
         }
         stage('Tomcatdeploy') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://54.227.25.21:8085/')], contextPath: 'app', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://18.215.173.224:8085/')], contextPath: 'demo', war: ' "**/*.war"'
             }
         }
     }
